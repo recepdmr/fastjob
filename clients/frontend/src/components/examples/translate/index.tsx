@@ -1,39 +1,42 @@
 import React from "react";
-import { TFunction } from "next-i18next";
+import Link from "next/link";
+import useTranslation from "next-translate/useTranslation";
 
-import { withTranslation, i18n } from "@i18n";
+import i18nConfig from "@i18n";
+
+const { locales } = i18nConfig;
 
 /**
- * This component is generated as en example usage of next-i18next
+ * This component is generated as en example usage of next-translate
  *
- * To learn more about next-i18next and i18n
- * please visit https://github.com/isaachinman/next-i18next
+ * To learn more about next-translate and i18n
+ * please visit https://github.com/vinissimus/next-translate
  */
 
-const I18NExampleComponent: React.FC<{ t: TFunction }> = ({ t }) => {
-    const changeLanguage = () => {
-        i18n.changeLanguage(i18n.language === "tr" ? "en" : "tr");
-    };
+export const NextTranslateExample: React.FC<{ defaultNamespace: string }> = ({
+    defaultNamespace,
+}) => {
+    const { t, lang } = useTranslation(defaultNamespace);
+
     return (
         <div>
             <header>
-                <h2>{t`home:title`}</h2>
+                <h2>{t`title`}</h2>
                 <div>
-                    <button onClick={changeLanguage}>
-                        {t(`common:language.en`)}
-                    </button>
-                    <button onClick={changeLanguage}>
-                        {t(`common:language.tr`)}
-                    </button>
+                    {locales.map((lng) => (
+                        <Link href="/" passHref locale={lng} key={lng}>
+                            <a>{t(`common:language.${lng}`)}</a>
+                        </Link>
+                    ))}
                 </div>
             </header>
             <main>
                 <p>{t("common:greet", { name: t`common:world` })}</p>
-                <p>{t`home:someText`}</p>
+                <p>{t`someText`}</p>
             </main>
             <footer>
                 <a
-                    href="https://github.com/isaachinman/next-i18next"
+                    href="https://github.com/vinissimus/next-translate"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -43,7 +46,3 @@ const I18NExampleComponent: React.FC<{ t: TFunction }> = ({ t }) => {
         </div>
     );
 };
-
-export const I18NExample = withTranslation(["common", "home"])(
-    I18NExampleComponent,
-);

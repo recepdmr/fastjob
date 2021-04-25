@@ -1,4 +1,4 @@
-# frontend
+# test
 
 This project was generated with [superplate](https://github.com/pankod/superplate).
 
@@ -86,11 +86,11 @@ Redux helps you write applications that behave consistently, run in different en
 
 [Go To Documentation](https://redux.js.org/introduction/getting-started)
 
-### **next-i18next**
+### **next-translate**
 
-next-i18next is a plugin for Next.js projects that allows you to get translations up and running quickly and easily, while fully supporting SSR, multiple namespaces with codesplitting, etc.
+Tiny and powerful i18n tools (Next plugin + API) to translate your Next.js pages.
 
-[Go To Documentation](https://github.com/isaachinman/next-i18next)
+[Go To Documentation](https://github.com/vinissimus/next-translate)
 
 ### **ESLint**
 
@@ -121,12 +121,6 @@ The React Testing Library is a very light-weight solution for testing React comp
 Docker simplifies and accelerates your workflow, while giving developers the freedom to innovate with their choice of tools, application stacks, and deployment environments for each project.
 
 [Go To Documentation](https://www.docker.com/get-started)
-
-### **Github Actions**
-
-GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub.
-
-[Go To Documentation](https://docs.github.com/en/actions)
 
 ## License
 

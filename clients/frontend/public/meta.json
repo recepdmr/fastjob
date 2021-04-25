@@ -1,5 +1,5 @@
 {
-    "name": "frontend",
+    "name": "test",
     "plugins": [
         {
             "name": "Chakra UI",
@@ -37,9 +37,9 @@
             "url": "https://redux.js.org/introduction/getting-started"
         },
         {
-            "name": "next-i18next",
-            "description": "next-i18next is a plugin for Next.js projects that allows you to get translations up and running quickly and easily, while fully supporting SSR, multiple namespaces with codesplitting, etc.",
-            "url": "https://github.com/isaachinman/next-i18next"
+            "name": "next-translate",
+            "description": "Tiny and powerful i18n tools (Next plugin + API) to translate your Next.js pages.",
+            "url": "https://github.com/vinissimus/next-translate"
         },
         {
             "name": "ESLint",
@@ -65,11 +65,6 @@
             "name": "Docker",
             "description": "Docker simplifies and accelerates your workflow, while giving developers the freedom to innovate with their choice of tools, application stacks, and deployment environments for each project.",
             "url": "https://www.docker.com/get-started"
-        },
-        {
-            "name": "Github Actions",
-            "description": "GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub.",
-            "url": "https://docs.github.com/en/actions"
         }
     ]
 }

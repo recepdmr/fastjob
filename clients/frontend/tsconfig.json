@@ -25,7 +25,7 @@
             "@styles": ["src/styles"],
             "@redux/*": ["src/redux/*"],
             "@redux": ["src/redux"],
-            "@i18n": ["./i18n"],
+            "@i18n": ["./i18n.json"],
             "@test/*": ["test/*"],
             "@test": ["test"]
         }

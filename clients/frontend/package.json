@@ -1,5 +1,5 @@
 {
-    "name": "frontend",
+    "name": "test",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -26,7 +26,7 @@
         "swr": "^0.4.0",
         "react-redux": "^7.2.2",
         "@reduxjs/toolkit": "^1.5.0",
-        "next-i18next": "^7.0.1",
+        "next-translate": "^1.0.1",
         "prettier": "^2.2.1"
     },
     "devDependencies": {
