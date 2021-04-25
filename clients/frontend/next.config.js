@@ -6,6 +6,10 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const nextTranslate = require("next-translate");
 
-const config = {};
+const config = {
+    future: {
+        webpack5: true,
+      }
+};
 
 module.exports = withPlugins([[withBundleAnalyzer], [nextTranslate]], config);
