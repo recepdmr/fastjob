@@ -1,5 +1,7 @@
 ﻿using Api.Abstraction.Extensions;
 using Api.Options;
+using Core;
+using Infrastructure.DataAccess.MongoDB;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -20,11 +22,10 @@ namespace Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-
-
             var identityServerOptions = services.GetAndConfigure<IdentityServerOptions>(Configuration);
             var applicationOptions = services.GetAndConfigure<ApplicationOptions>(Configuration);
 
+            services.GetAndConfigure<MongoDbOptions>(Configuration);
             services.AddApiVersioning(options =>
             {
                 options.DefaultApiVersion = new ApiVersion(applicationOptions.DefaultVersion, 0);
@@ -38,10 +39,10 @@ namespace Api
                 options.SubstituteApiVersionInUrl = true;
             });
 
-
             services.AddControllers();
             services.AddSwaggerWithOAuth2(identityServerOptions);
             services.AddOAuth2JwtBearerAuthentication(identityServerOptions);
+            services.AddCore();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

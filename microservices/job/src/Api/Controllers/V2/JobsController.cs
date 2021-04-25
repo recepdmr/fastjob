@@ -1,14 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers.V2
 {
     [ApiVersion("2.0")]
     public class JobsController : V1.JobsController
     {
-        [HttpGet]
-        public override IActionResult Get()
+        public JobsController(IMediator mediator) : base(mediator)
         {
-            return Ok("v2");
         }
     }
 }

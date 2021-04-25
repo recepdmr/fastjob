@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Abstraction.Controllers
 {
     [ApiVersion("1.0")]
-    public class V1ControllerBase : FastJobJobsControllerBase
+    public abstract class V1ControllerBase : FastJobJobsControllerBase
     {
+        protected V1ControllerBase(IMediator mediator) : base(mediator)
+        {
+        }
     }
 }
