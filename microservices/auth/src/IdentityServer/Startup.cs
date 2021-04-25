@@ -31,7 +31,7 @@ namespace IdentityServer
             services.AddControllersWithViews();
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(Configuration.GetConnectionString("Default")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -66,9 +66,11 @@ namespace IdentityServer
                     options.ClientId = "copy client ID from Google here";
                     options.ClientSecret = "copy client secret from Google here";
                 });
+
+            services.AddScoped<SeedData>();
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, SeedData seedData)
         {
             if (Environment.IsDevelopment())
             {
@@ -85,6 +87,8 @@ namespace IdentityServer
             {
                 endpoints.MapDefaultControllerRoute();
             });
+
+            seedData.SeedDataAsync().Wait();
         }
     }
 }
