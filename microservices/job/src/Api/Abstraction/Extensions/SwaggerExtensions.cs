@@ -65,7 +65,6 @@ namespace Api.Abstraction.Extensions
 
                     options.OAuthClientId(identityServerOptions.ClientId);
                     options.OAuthAppName(applicationOptions.ApplicationName);
-                    options.OAuthUsePkce();
                 });
         }
 
